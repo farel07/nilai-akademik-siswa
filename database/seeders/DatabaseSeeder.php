@@ -141,7 +141,7 @@ class DatabaseSeeder extends Seeder
         Nilai_Siswa::create([
             'user_id' => 2,
             'mapel_id' => 1,
-            'nam' => 1,
+            'nama_nilai_id' => 1,
             'nilai' => 90
         ]);
     }
