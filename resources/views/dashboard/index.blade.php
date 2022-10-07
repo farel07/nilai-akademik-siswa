@@ -3,6 +3,9 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Dashboard</h1>
   </div>
+
+
+  <br>
 {{-- {{ $users[0]->guru_mapel }} --}}
 @foreach ($users[0]->guru_mapel as $mapel)
     Mapel : {{ $mapel->nama_mapel }} <br>

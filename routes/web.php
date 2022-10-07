@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Models\Nilai_Siswa;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,31 @@ Route::get('/', function () {
         'nilai' => Nilai_Siswa::all()
     ]);
 });
+
+// admin routes
+Route::middleware(['admin'])->prefix('/admin')->group(function(){
+    Route::get('/dashboard', function(){
+        return 'hi';
+    });
+});
+
+// guru routes
+Route::middleware(['guru'])->prefix('/guru')->group(function(){
+    Route::get('/dashboard', function(){
+        return 'hi';
+    });
+});
+
+// siswa routes
+Route::middleware(['siswa'])->prefix('/siswa')->group(function(){
+    Route::get('/dashboard', function(){
+        return 'hi';
+    });
+});
+
+// auth route
+Route::get('/login', function(){
+    return view('auth.login');
+});
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/logout', [LoginController::class, 'logout']);
