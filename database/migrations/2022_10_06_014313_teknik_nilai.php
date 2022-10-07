@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('teknik');
             $table->bigInteger('kategori_nilai_id')->unsigned();
             $table->foreign('kategori_nilai_id')->references('id')->on('kategori_nilai')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->timestamps();
         });
     }
 

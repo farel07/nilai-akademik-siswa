@@ -5,7 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Nilai_Mapel extends Model
+class Kategori_Nilai extends Model
 {
     use HasFactory;
+    protected $table = 'kategori_nilai';
+    protected $guarded = ['id'];
+    
 }

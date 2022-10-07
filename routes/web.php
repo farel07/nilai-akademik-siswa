@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Nilai_Siswa;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('dashboard.index', [
-        'users' => User::all()
+        'users' => User::all(),
+        'nilai' => Nilai_Siswa::all()
     ]);
 });
