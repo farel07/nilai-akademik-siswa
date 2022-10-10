@@ -36,6 +36,12 @@ class DatabaseSeeder extends Seeder
         Role::create([
             'role' => 'administrator'
         ]);
+        Role::create([
+            'role' => 'guru'
+        ]);
+        Role::create([
+            'role' => 'siswa'
+        ]);
 
 
 
@@ -58,13 +64,31 @@ class DatabaseSeeder extends Seeder
 
         // ============== tambah user ==================
         User::create([
-            'username' => 'asdasd',
-            'password' => '123qwe',
-            'nisn_npsn' => '0098122231',
+            'username' => 'admin',
+            'password' => bcrypt('123qwe'),
+            'nisn_npsn' => '000000',
             'name' => 'asdds asda',
             'tempat_lahir' => 'asdad',
             'tanggal_lahir' => now(),
             'role_id' => 1
+        ]);
+        User::create([
+            'username' => 'guru',
+            'password' => bcrypt('123qwe'),
+            'nisn_npsn' => '1203909',
+            'name' => 'asdds asda',
+            'tempat_lahir' => 'asdad',
+            'tanggal_lahir' => now(),
+            'role_id' => 2
+        ]);
+        User::create([
+            'username' => 'siswa',
+            'password' => bcrypt('123qwe'),
+            'nisn_npsn' => '0098122231',
+            'name' => 'asdds asda',
+            'tempat_lahir' => 'asdad',
+            'tanggal_lahir' => now(),
+            'role_id' => 3
         ]);
 
         User::create([
