@@ -24,29 +24,49 @@ Route::get('/', function () {
 });
 
 // admin routes
-Route::middleware(['admin'])->prefix('/admin')->group(function(){
-    Route::get('/dashboard', function(){
+Route::middleware(['admin'])->prefix('/admin')->group(function () {
+    Route::get('/dashboard', function () {
+        return 'hi';
+    });
+
+    Route::get('/master/user', function () {
+        return 'hi';
+    });
+
+    Route::get('/master/kelas', function () {
+        return 'hi';
+    });
+
+    Route::get('/master/mapel', function () {
         return 'hi';
     });
 });
 
 // guru routes
-Route::middleware(['guru'])->prefix('/guru')->group(function(){
-    Route::get('/dashboard', function(){
+Route::middleware(['guru'])->prefix('/guru')->group(function () {
+    Route::get('/dashboard', function () {
         return 'hi';
     });
 });
 
 // siswa routes
-Route::middleware(['siswa'])->prefix('/siswa')->group(function(){
-    Route::get('/dashboard', function(){
+Route::middleware(['siswa'])->prefix('/siswa')->group(function () {
+    Route::get('/dashboard', function () {
         return 'hi';
     });
 });
 
 // auth route
-Route::get('/login', function(){
+Route::get('/login', function () {
     return view('auth.login');
 });
+
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/logout', [LoginController::class, 'logout']);
+
+Route::get('/dokumentasi', function () {
+    return view('dokumentasi', [
+        'users' => User::all(),
+        'nilai' => Nilai_Siswa::all()
+    ]);
+});
