@@ -25,17 +25,27 @@ Route::middleware(['admin'])->prefix('/admin')->group(function () {
         return 'hi';
     });
 
-    Route::get('/master/user', function () {
-        return 'hi';
+    Route::prefix('/master')->group(function (){
+        Route::get('/user', function(){
+            return 'master/user';
+        });
     });
 
-    Route::get('/master/kelas', function () {
-        return 'hi';
-    });
+    // Route::prefix('/data')->group(function (){
+    //     Route::get('/siswa', function(){
+    //         return 'master/siswa';
+    //     });
+    //     Route::get('/guru', function(){
+    //         return 'master/guru';
+    //     });
+    //     Route::get('/kelas', function(){
+    //         return 'master/kelas';
+    //     });
+    //     Route::get('/mapel', function(){
+    //         return 'master/mapel';
+    //     });
+    // });
 
-    Route::get('/master/mapel', function () {
-        return 'hi';
-    });
 });
 
 // guru routes
