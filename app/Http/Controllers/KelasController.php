@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Kelas;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class KelasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('dashboard.admin.master.users.users', [
-            'users' => User::all()
+        return view('dashboard.admin.master.kelas.kelas', [
+            'kelas' => Kelas::latest()->get()
         ]);
     }
 
@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.admin.master.kelas.create_kelas', []);
     }
 
     /**
@@ -37,27 +37,38 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $messages = ([
+            'required' => 'Isien le'
+        ]);
+
+        $validateData = $request->validate([
+            'nama_kelas' => 'required'
+        ], $messages);
+
+        Kelas::create($validateData);
+        return redirect('/admin/master/kelas');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        return view('dashboard.admin.master.kelas.detail_kelas', [
+            'kelas' => Kelas::find($id)
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Kelas $kelas)
     {
         //
     }
@@ -66,10 +77,10 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Kelas $kelas)
     {
         //
     }
@@ -77,23 +88,11 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Kelas $kelas)
     {
         //
-    }
-
-    public function siswa()
-    {
-        $data = ['siswa' => User::where('role_id', 3)->get()];
-        return view('dashboard.admin.master.users.siswa', $data);
-    }
-
-    public function guru()
-    {
-        $data = ['guru' => User::where('role_id', 2)->get()];
-        return $data['guru'];
     }
 }
