@@ -6,6 +6,7 @@
 
 
   <br>
+
 {{-- {{ $users[0]->guru_mapel }} --}}
 @foreach ($users[0]->guru_mapel as $mapel)
     Mapel : {{ $mapel->nama_mapel }} <br>
