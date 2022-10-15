@@ -115,7 +115,8 @@ class UserController extends Controller
         //
     }
 
-    public function siswa(){
+    public function siswa()
+    {
         $data = ['siswa' => User::where('role_id', 3)->get()];
         return view('dashboard.admin.master.users.siswa', $data);
     }
@@ -135,5 +136,35 @@ class UserController extends Controller
 
     public function create_guru(){
         return view('dashboard.admin.master.users.create_guru');
+    }
+
+    public function guru()
+    {
+        $data = ['guru' => User::where('role_id', 2)->get()];
+        return $data['guru'];
+    }
+
+<<<<<<< HEAD
+    public function guru(){
+        $data['guru'] = User::where('role_id', 2)->get();
+        return view('dashboard.admin.master.users.guru', $data);
+    }
+
+    public function create_siswa(){
+        $data = [
+            'kelas' => Kelas::all()
+        ];
+
+        return view('dashboard.admin.master.users.create_siswa', $data);
+    }
+
+    public function create_guru(){
+        return view('dashboard.admin.master.users.create_guru');
+=======
+    public function guru()
+    {
+        $data = ['guru' => User::where('role_id', 2)->get()];
+        return $data['guru'];
+>>>>>>> ogik
     }
 }

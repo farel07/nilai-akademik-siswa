@@ -5,6 +5,7 @@ use App\Models\Nilai_Siswa;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\LoginController;
 use App\Models\Kelas;
 
@@ -19,7 +20,7 @@ use App\Models\Kelas;
 |
 */
 
-Route::get('/', function(){
+Route::get('/', function () {
     return redirect('login');
 })->middleware('guest');
 
@@ -31,7 +32,19 @@ Route::middleware(['admin', 'auth'])->prefix('/admin')->group(function () {
         Route::get('/user/siswa/create_siswa',[UserController::class, 'create_siswa']);
         Route::get('/user/guru',[UserController::class, 'guru']);
         Route::get('/user/guru/create_guru',[UserController::class, 'create_guru']);
+<<<<<<< HEAD
+    Route::prefix('/master')->group(function (){
+        Route::get('/user/siswa',[UserController::class, 'siswa']);
+        Route::get('/user/siswa/create_siswa',[UserController::class, 'create_siswa']);
+        Route::get('/user/guru',[UserController::class, 'guru']);
+        Route::get('/user/guru/create_guru',[UserController::class, 'create_guru']);
+=======
+    Route::prefix('/master')->group(function () {
+        Route::get('/user/siswa', [UserController::class, 'siswa']);
+        Route::get('/user/guru', [UserController::class, 'guru']);
+>>>>>>> ogik
         Route::resource('/user', UserController::class);
+        Route::resource('/kelas', KelasController::class);
     });
 
     // Route::prefix('/data')->group(function (){

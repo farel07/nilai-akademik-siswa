@@ -106,6 +106,14 @@ class DatabaseSeeder extends Seeder
         // ============ tambah kelas untuk user ==============
         Kelas_User::create([
             'user_id' => 3,
+<<<<<<< HEAD
+=======
+            'kelas_id' => 1
+        ]);
+
+        Kelas_User::create([
+            'user_id' => 6,
+>>>>>>> ogik
             'kelas_id' => 1
         ]);
 
@@ -167,6 +175,16 @@ class DatabaseSeeder extends Seeder
             'mapel_id' => 1,
             'nama_nilai_id' => 1,
             'nilai' => 90
+        ]);
+
+        User::create([
+            'username' => 'aijen',
+            'password' => bcrypt('123qwe'),
+            'nisn_npsn' => '007474367',
+            'name' => 'Aijen Bilek',
+            'tempat_lahir' => 'Bilek island',
+            'tanggal_lahir' => now(),
+            'role_id' => 3
         ]);
     }
 }

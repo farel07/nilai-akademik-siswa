@@ -18,7 +18,7 @@
 </div>
 
 <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-12">
 
         <table class="table">
             <thead>
@@ -26,7 +26,7 @@
                 <th scope="col">NO</th>
                 <th scope="col">NISN</th>
                 <th scope="col">NAMA</th>
-                <th scope="col">TEMPAT TANGGAL LAHIR</th>
+                <th scope="col">TEMPAT, TANGGAL LAHIR</th>
                 <th scope="col">KELAS</th>
                 <th scope="col">ACTION</th>
             </tr>
