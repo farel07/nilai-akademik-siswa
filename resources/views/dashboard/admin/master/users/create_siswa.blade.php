@@ -23,7 +23,7 @@
 
             <div class="form-group mb-3">
                 <label for="project_name">NISN</label>
-                <input type="number" class="form-control" name="nisn_npsn" id="nisn_npsn" placeholder="Nisn">
+                <input type="number" class="form-control" name="nisn_npsn" id="nisn_npsn" placeholder="Npsn">
                 @error('nisn_npsn')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
@@ -31,7 +31,7 @@
 
             <div class="form-group mb-3">
                 <label for="project_name">Tempat Lahir</label>
-                <input type="text" class="form-control" name="tempat_lahir" id="tempat_lahir" placeholder="Nisn">
+                <input type="text" class="form-control" name="tempat_lahir" id="tempat_lahir" placeholder="Tempat lahir">
                 @error('tempat_lahir')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
@@ -60,7 +60,7 @@
 
             <div class="form-group mb-3">
                 <label for="project_name">Username</label>
-                <input type="text" class="form-control" name="username" id="username" placeholder="Nisn">
+                <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                 @error('username')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror

@@ -65,7 +65,6 @@ class UserController extends Controller
                 'user_id' => $user->id,
                 'kelas_id' => $request->kelas_id
             ]);
-            $to = 'guru';
         }
 
         return redirect('/admin/master/user/' . $to)->with('success', 'Data ' . $to . ' berhasil ditambahkan!');
