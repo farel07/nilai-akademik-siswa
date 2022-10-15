@@ -8,7 +8,7 @@
   <br>
 
 {{-- {{ $users[0]->guru_mapel }} --}}
-@foreach ($users[0]->guru_mapel as $mapel)
+@foreach ($users[1]->guru_mapel as $mapel)
     Mapel : {{ $mapel->nama_mapel }} <br>
     @foreach ($mapel->nama_nilai as $nl)
         teknik : {{ $nl->teknik }} <br>
@@ -38,6 +38,17 @@
     {{ $nilai_siswa->nama_nilai }}
     {{ $nilai_siswa->nama_nilai->guru_mapel->user->name }}
 @endforeach
+
+<br>
+<br>
+<hr>
+{{-- @foreach ($kelas[0]->user_kelas as $as)
+
+{{ $as->user->name }}
+    
+@endforeach --}}
+
+{{ $kelas->user_kelas }}
 
   <p>test</p>
 @endsection

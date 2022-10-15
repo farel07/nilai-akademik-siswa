@@ -17,7 +17,7 @@ class User extends Authenticatable
     }
 
     public function kelas_user(){
-        return $this->hasOne(Kelas_User::class, 'user_id');
+        return $this->hasOne(Kelas_User::class, 'user_id', 'id');
     }
 
     public function guru_mapel(){

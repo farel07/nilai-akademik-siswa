@@ -5,6 +5,18 @@
     <h1 class="h2">Master User : Siswa</h1>
 </div>
 
+<a href="/admin/master/user/siswa/create_siswa" class="btn btn-primary mb-3">Tambah Data Siswa</a>
+
+<div class="col-md-6">
+@if (session()->has('success'))
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{ session('success') }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+
+</div>
+
 <div class="row">
     <div class="col-md-9">
 

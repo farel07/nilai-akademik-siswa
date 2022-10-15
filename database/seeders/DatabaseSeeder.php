@@ -76,7 +76,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'guru',
             'password' => bcrypt('123qwe'),
             'nisn_npsn' => '1203909',
-            'name' => 'asdds asda',
+            'name' => 'guru',
             'tempat_lahir' => 'asdad',
             'tanggal_lahir' => now(),
             'role_id' => 2
@@ -85,7 +85,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'siswa',
             'password' => bcrypt('123qwe'),
             'nisn_npsn' => '0098122231',
-            'name' => 'asdds asda',
+            'name' => 'siswa',
             'tempat_lahir' => 'asdad',
             'tanggal_lahir' => now(),
             'role_id' => 3
@@ -105,7 +105,7 @@ class DatabaseSeeder extends Seeder
 
         // ============ tambah kelas untuk user ==============
         Kelas_User::create([
-            'user_id' => 1,
+            'user_id' => 3,
             'kelas_id' => 1
         ]);
 
@@ -113,11 +113,11 @@ class DatabaseSeeder extends Seeder
 
         // ================== tambah guru pada mapel ===================
         Guru_Mapel::create([
-            'user_id' => 1,
+            'user_id' => 2,
             'mapel_id' => 1
         ]);
         Guru_Mapel::create([
-            'user_id' => 1,
+            'user_id' => 2,
             'mapel_id' => 2
         ]);
 
